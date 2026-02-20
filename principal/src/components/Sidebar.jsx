@@ -14,7 +14,7 @@ const Sidebar = () => {
   const toggleProfileDropdown = () => setProfileOpen((prev) => !prev);
 
   return (
-    <aside className="w-60 bg-white min-h-screen shadow-sm flex flex-col px-6 pt-6 pb-4 text-gray-900">
+    <aside className="w-72 bg-white min-h-screen shadow-sm flex flex-col px-6 pt-6 pb-4 text-gray-900">
       {/* ===== PROFILE HEADER ===== */}
       <div className="relative bg-blue-50 py-10 px-6 -mx-6 -mt-6  flex flex-col items-center shadow-sm rounded-b-lg">
         <div className="relative">
@@ -47,7 +47,7 @@ const Sidebar = () => {
                   </li> 
                   <li className="flex items-center gap-3"> 
                     <MapPin size={18} className="text-gray-600 shrink-0" /> 
-                    <span className="text-xs whitespace-nowrap">Administrative Block, Room 101</span>
+                    <span className="text-xs leading-snug">Administrative Block, Room 101</span>
               </li>
             </ul>
         </div>
@@ -56,7 +56,7 @@ const Sidebar = () => {
  
       <div className="mt-5 text-gray-900 text-base">
         <h3 className="mb-4 font-semibold">Professional Details</h3>
-         <p className="mb-2 text-xs whitespace-nowrap">Experience: 25+ Years in Education</p>
+         <p className="mb-2 text-xs leading-snug">Experience: 25+ Years in Education</p>
           <p className="text-xs ">Education: Ph.D. in Educational Administration</p>
       </div>
       {/* QUICK ACTIONS */}
@@ -83,7 +83,7 @@ const Sidebar = () => {
 
           {/* Dropdown Menu */}
           {profileOpen && (
-            <div className="mt-1 absolute left-0 w-full bg-white border border-gray-300 rounded-md shadow-md z-30">
+            <div className="mt-1 left-0 w-full bg-white border border-gray-300 rounded-md shadow-md z-30">
               <button
                 className="block w-full text-left px-4 py-2 text-sm font-normal hover:bg-gray-50"
                 onClick={() => alert("View Detailed Profile clicked")}

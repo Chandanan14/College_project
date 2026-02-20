@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Building2,
   Users,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 const ManagementDashboard = () => {
+  const navigate = useNavigate();
   const sections = [
      {
       title: "Departments",
@@ -19,6 +21,7 @@ const ManagementDashboard = () => {
       tag: "7 Departments",
       icon: Building2,
       gradient: "from-[#56CCF2] to-[#2F80ED]", // blue gradient
+      path: "/departments",
     },
     {
       title: "Committee Management",
@@ -26,6 +29,7 @@ const ManagementDashboard = () => {
       tag: "12 Active Committees",
       icon: Users,
       gradient: "from-[#6FCF97] to-[#27AE60]", // green gradient
+      path:"/committee-management"
     },
     {
       title: "Faculty Management",
@@ -33,6 +37,7 @@ const ManagementDashboard = () => {
       tag: "85 Faculty Members",
       icon: GraduationCap,
       gradient: "from-[#BB6BD9] to-[#9B51E0]", // purple gradient
+      path:"/faculty-management"
     },
     {
       title: "Student Affairs",
@@ -40,6 +45,7 @@ const ManagementDashboard = () => {
       tag: "1,200+ Students",
       icon: School,
       gradient: "from-[#F2C94C] to-[#F2994A]", // orange-yellow gradient
+      path:"/student-affairs"
     },
     {
       title: "Academic Planning",
@@ -47,6 +53,7 @@ const ManagementDashboard = () => {
       tag: "45 Courses",
       icon: BookOpen,
       gradient: "from-[#2193b0] to-[#6dd5ed]", // teal-blue gradient
+      path:"/academic-planning"
     },
     {
       title: "Reports & Analytics",
@@ -54,6 +61,7 @@ const ManagementDashboard = () => {
       tag: "Monthly Reports",
       icon: BarChart3,
       gradient: "from-[#667EEA] to-[#764BA2]", // violet-blue gradient
+      path:"/reports-analytics"
     },
     {
       title: "Approval Center",
@@ -61,6 +69,7 @@ const ManagementDashboard = () => {
       tag: "8 Pending",
       icon: ShieldCheck,
       gradient: "from-[#F85032] to-[#E73827]", // red gradient
+      path:"/approval-center"
     },
     {
       title: "Administration",
@@ -68,6 +77,7 @@ const ManagementDashboard = () => {
       tag: "Multiple Sections",
       icon: Briefcase,
       gradient: "from-[#434343] to-[#000000]", // dark gray gradient
+      path:"/administrationstop"
     },
   ];
 
@@ -82,6 +92,7 @@ const ManagementDashboard = () => {
           return (
             <div
               key={sec.title}
+              onClick={() => sec.path && navigate(sec.path)}
               className="flex items-center justify-between bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-all cursor-pointer"
             >
               {/* Left side */}

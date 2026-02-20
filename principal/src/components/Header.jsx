@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Home, Bell, MessageSquare, LogOut, Bot } from "lucide-react";
 
 const Header = () => {
@@ -17,27 +18,54 @@ const Header = () => {
       {/* Right section */}
       <nav className="flex items-center gap-6 text-sm">
         {/* Home button */}
-        <button className="flex items-center gap-1 bg-black text-white px-3 py-1 rounded cursor-pointer hover:opacity-90 transition-opacity">
+        
+      <NavLink
+  to="/" 
+  className={({ isActive }) =>
+            `flex items-center gap-1 px-3 py-1 rounded transition ${
+              isActive ? "bg-black text-white" : "text-black hover:bg-gray-200"
+            }`
+          }
+          >
+          
           <Home size={16} /> Home
-        </button>
+
+        </NavLink>
 
         {/* Messages button */}
-        <button className="flex items-center gap-1 relative text-black hover:text-black cursor-pointer bg-transparent border-none p-0">
-          <MessageSquare size={16} />
-          <span>Messages</span>
-          <span className="absolute -top-1 -right-3 bg-red-600 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-semibold">
-            2
-          </span>
-        </button>
+        <NavLink
+  to="/messages"
+  className={({ isActive }) =>
+            `flex items-center gap-1 relative px-3 py-1 rounded transition ${
+              isActive ? "bg-black text-white" : "text-black hover:bg-gray-200"
+            }`
+          }
+  
+>
+  <MessageSquare size={16} />
+  <span>Messages</span>
+
+  {/*<span className="absolute -top-1 -right-3 bg-red-600 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-semibold">
+    2
+  </span>*/}
+</NavLink>
+
 
         {/* Notifications button */}
-        <button className="flex items-center gap-1 relative text-black hover:text-black cursor-pointer bg-transparent border-none p-0">
+         <NavLink
+          to="/notifications"
+          className={({ isActive }) =>
+            `flex items-center gap-1 relative px-3 py-1 rounded transition ${
+              isActive ? "bg-black text-white" : "text-black hover:bg-gray-200"
+            }`
+          }
+        >
           <Bell size={16} />
           <span>Notifications</span>
-          <span className="absolute -top-1 -right-3 bg-red-600 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-semibold">
+           {/*<span className="absolute -top-1 -right-3 bg-red-600 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-semibold">
             2
-          </span>
-        </button>
+          </span>*/}
+        </NavLink>
 
         {/* AI Assistant button */}
         <button className="flex items-center gap-1 text-blue-600 hover:text-blue-800 cursor-pointer bg-transparent border-none p-0 transition-colors">
